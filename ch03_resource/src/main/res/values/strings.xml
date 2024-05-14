@@ -1,0 +1,8 @@
+<resources>
+    <!--  문자열 리소스를 정의  -->
+    <string name="app_name">ch03_resource</string>
+    <string name="welcome_message">hello! welcome! </string>
+    <string name="btn_text">click me!</string>
+    <string name="text2">Text View Text </string>
+    <string name="hello">Hello!</string>
+</resources>

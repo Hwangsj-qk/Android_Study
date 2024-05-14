@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ch03_resource</string>
+    <string name="welcome_message"> 안녕하세요! 반갑습니다! </string>
+    <string name="btn_text">클릭하세요!</string>
+    <string name="text2">텍스트뷰: 테스트입니다 </string>
+    <string name="hello">안녕하세요!</string>
+</resources>
