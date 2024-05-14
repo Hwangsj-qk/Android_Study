@@ -18,7 +18,7 @@ class Resource4Activity : AppCompatActivity() {
         val imageView = findViewById<ImageView>(R.id.ImageView2)
 
         // 플랫폼 리소스 사용시 android.R 로 접근
-        textView4.setText(android.R.string.copy)
+        textView4.setText(android.R.string.paste)
         textView5.setTextColor(resources.getColor(android.R.color.holo_orange_light))
 
         imageView.setImageResource(android.R.drawable.ic_dialog_alert)

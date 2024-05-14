@@ -14,16 +14,25 @@
       <SelectionState runConfigName="ch03_resource">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="Resource4Activity">
+      <SelectionState runConfigName="ch03_resource2">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="Resource5Activity (1)">
+      <SelectionState runConfigName="Resource6Activity">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="Resource5Activity (2)">
+      <SelectionState runConfigName="Resource7Activity">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
-      <SelectionState runConfigName="Resource5Activity (3)">
+      <SelectionState runConfigName="Test1Activity">
+        <option name="selectionMode" value="DROPDOWN" />
+      </SelectionState>
+      <SelectionState runConfigName="Test2Activity">
+        <option name="selectionMode" value="DROPDOWN" />
+      </SelectionState>
+      <SelectionState runConfigName="ch04_permission">
+        <option name="selectionMode" value="DROPDOWN" />
+      </SelectionState>
+      <SelectionState runConfigName="Layout1Activity">
         <option name="selectionMode" value="DROPDOWN" />
       </SelectionState>
     </selectionStates>
