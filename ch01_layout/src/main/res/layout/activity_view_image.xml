@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".pr01.ViewImageActivity"
+    android:orientation="vertical">
+
+<!--    maxWidth : 이미지 최대 너비
+        maxHeight : 이미지 최대 높이
+        adjustViewBounds : true 설정 시 가로 세로 뷰 크기 맞춤 -->
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/imagetest"
+        android:maxWidth="300dp"
+        android:maxHeight="100dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="산과 숲과 다리가 있는 그림"
+        android:padding="16dp"/>
+
+</LinearLayout>

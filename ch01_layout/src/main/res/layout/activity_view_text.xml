@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".pr01.ViewTextActivity"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black"
+        android:fontFamily="serif"
+        android:text="텍스트뷰"
+        android:textColor="#FF0000"
+        android:textSize="32dp"
+        android:textStyle="italic"
+        />
+
+<!--    문자열에 특정 형태가 있을 때 자동 링크 추가 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:autoLink="web|phone|email"
+        android:text="홈페이지 : http://naver.com 전화번호 : 010-1234-5678 이메일 : abc@abc.com"
+        android:textSize="32dp" />
+
+<!--    최대 줄수, 말줄임표 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/long_text"
+        android:maxLines="2"
+        android:ellipsize="end"/>
+<!--    ellipsize : 말 줄임 표시-->
+
+<!--    줄간격, 글자 간격-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/long_text"
+        android:paddingTop="16dp"
+        android:lineSpacingMultiplier="1.2"
+        android:letterSpacing="0.2"/>
+
+</LinearLayout>
