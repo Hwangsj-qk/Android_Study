@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:columnCount="3">
+
+<!--    여백이 있는 특정 뷰 확장 -->
+    <Button android:text="1" />
+    <Button android:text="많이 긴 텍스트입니다." />
+    <Button android:text="2" />
+    <Button android:text="3" />
+    <Button android:text="4"
+        android:layout_gravity="fill_horizontal"/>
+    <Button android:text="5" />
+
+
+
+</GridLayout>

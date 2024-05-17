@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:columnCount="3"
+    android:rowCount="3">
+
+<!--    구성요소를 격자 형태로 배열할 때 사용하는 레이아웃
+        orientation : 방향 설정
+        rowCount : 세로로 나열할 뷰의 개수
+        columnCount : 가로로 나열할 뷰의 개수
+        -->
+
+    <Button android:text="1"/>
+    <Button android:text="2"/>
+    <Button android:text="3"/>
+    <Button android:text="4"/>
+    <Button android:text="5"/>
+    <Button android:text="6"/>
+
+</GridLayout>

@@ -64,8 +64,8 @@ MyAndroidApp/
 ```xml
     <data>데이터내용(콘텐츠)</data>
 ```
-3. 엘리먼트(Element)
-
+3. 엘리먼트(Element) : 시작 태그와 종료 태그 사이에 있는 콘텐츠
+    ▶ 엘리먼트(요소) = 태그 + 콘텐츠(내용)
 
 ## 권한
 
@@ -93,7 +93,6 @@ MyAndroidApp/
     <!-- Other declarations -->
 
 </manifest>
-
 ```
 
 ### 2. 위험 권한 (Dangerous Permissions)

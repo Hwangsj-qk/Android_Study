@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Frame2Activity"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_red"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="빨강"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/btn_green"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="초록"
+            android:layout_weight="1" />
+<!--        layout_weight: 비율에 따라 여백 나누어 사용하기 -->
+
+        <Button
+            android:id="@+id/btn_blue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="파랑"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:id="@+id/layout_red"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#F00"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/layout_green"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#0F0"
+                android:orientation="horizontal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_blue"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#00F"
+            android:orientation="horizontal" />
+
+    </FrameLayout>
+
+</LinearLayout>

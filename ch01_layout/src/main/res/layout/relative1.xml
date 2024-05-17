@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<!--    특정 뷰의 위치를 기준으로(상대적으로) 화면에 배치하고 정렬하는 레이아웃 -->
+    <ImageView
+        android:id="@+id/ImageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/ic_launcher_round" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/ImageView1"
+        android:layout_toRightOf="@+id/ImageView1"
+        android:text="버튼" />
+<!--    align : 맞추다
+        android:layout_alignBottom="@+id/ImageView1"
+        -> ImageView1의 밑부분에 맞추다.
+-->
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/ImageView1"
+        android:layout_alignParentRight="true"
+        android:text="버튼" />
+
+</RelativeLayout>
