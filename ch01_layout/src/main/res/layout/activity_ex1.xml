@@ -6,8 +6,54 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ex.Ex1Activity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="16dp">
 
+    <!-- 프로필 사진 -->
+    <ImageView
+        android:id="@+id/progileImage"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@android:drawable/sym_def_app_icon"
+        android:contentDescription="프로필 사진"
+        android:layout_gravity="center"
+        android:padding="8dp" />
+
+    <!-- 이름 입력 -->
+    <EditText
+        android:id="@+id/nameInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:contentDescription="이름을 입력하세요"
+        android:inputType="text"
+        android:padding="8dp" />
+
+    <!-- 이메일 입력 -->
+    <EditText
+        android:id="@+id/emailInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="이메일을 입력하세요"
+        android:inputType="textEmailAddress"
+        android:padding="8dp" />
+
+    <!-- 전화번호 입력 -->
+    <EditText
+        android:id="@+id/phoneInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="전화번호를 입력하세요"
+        android:inputType="phone"
+        android:padding="8dp" />
+
+    <!-- 저장 버튼 -->
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="저장"
+        android:onClick="onSaveButtonClick"
+        android:padding="8dp" />
 
 
 

@@ -12,7 +12,7 @@
 - [코드명, 버전, API 레벨] (https://source.android.com/docs/setup/about/build-numbers?hl=ko)
 
 ## 안드로이드 프로젝트 디렉토리 구조
-```xml
+```
 MyAndroidApp/
  ├── .idea/                      # 프로젝트 설정 파일
  ├── app/                        # 메인 애플리케이션 모듈
@@ -227,3 +227,146 @@ MyAndroidApp/
 - [Manifest.permission](https://developer.android.com/reference/android/Manifest.permission)
 
 ---
+
+## Activity
+
+### 1.  Activity란
+
+Activity는 안드로이드 앱의 화면을 구성하는 기본 단위입니다. 각 Activity는 사용자와 상호작용하는 단일 화면을 나타냅니다.
+
+### 2. Activity 생명 주기(Life Cycle)
+
+Activity는 여러 상태를 거치며, 각각의 상태 전환 시 특정 콜백 메서드가 호출됩니다. 이를 Activity 생명 주기라고 합니다. 생명 주기를 이해하면 효율적으로 리소스를 관리하고 앱의 상태를 제어할 수 있습니다.
+
+### 주요 생명 주기 메서드
+
+1. onCreate()
+    - Activity가 처음 생성될 때 호출됩니다.
+    - 초기화 작업을 수행합니다. (예: UI 설정, 데이터 바인딩)
+2. onStart()
+    - Activity가 사용자에게 보이기 시작할 때 호출됩니다.
+3. onResume()
+    - Activity가 사용자와 상호작용하기 직전에 호출됩니다.
+4. onPause()
+    - 다른 Activity가 시작되려 할 때 호출됩니다.
+    - 데이터 저장 등 필요한 작업을 수행합니다.
+5. onStop()
+    - Activity가 더 이상 사용자에게 보이지 않을 때 호출됩니다.
+6. onDestroy()
+    - Activity가 소멸되기 직전에 호출됩니다.
+
+![Activity 생명주기](https://developer.android.com/images/activity_lifecycle.png)
+
+---
+
+### 참고 자료
+
+- [안드로이드 개발자 공식 문서: Activity 생명 주기](https://developer.android.com/guide/components/activities/activity-lifecycle)
+
+---
+
+## 인텐트(Intent)
+
+### 1. 인텐트(Intent)란?
+
+- *인텐트(Intent)는 안드로이드 컴포넌트 간에 작업을 수행하도록 요청하는 메시지 객체입니다. 인텐트는 주로 액티비티(Activity)를 시작하거나, 서비스(Service)를 시작하거나, 브로드캐스트(Broadcast)를 전송할 때 사용됩니다.
+
+### 주요 역할
+
+- 액티비티 전환: 인텐트를 통해 다른 액티비티를 시작할 수 있습니다.
+- 데이터 전달: 인텐트를 통해 데이터(예: 문자열, 숫자 등)를 다른 컴포넌트로 전달할 수 있습니다.
+- 외부 앱 호출: 인텐트를 통해 다른 앱을 호출할 수 있습니다. 예를 들어, 웹 브라우저를 열거나 연락처 앱을 실행할 수 있습니다.
+
+---
+
+### 2. 명시적 인텐트와 암시적 인텐트
+
+### 명시적 인텐트 (Explicit Intent)
+
+명시적 인텐트는 특정 컴포넌트를 명시적으로 지정하여 작업을 요청합니다. 주로 앱 내부에서 액티비티를 전환할 때 사용됩니다.
+
+### 예시
+
+```kotlin
+// 명시적 인텐트를 사용하여 SecondActivity 시작
+val intent = Intent(this, SecondActivity::class.java)
+startActivity(intent)
+
+```
+
+### 암시적 인텐트 (Implicit Intent)
+
+암시적 인텐트는 요청할 작업의 일반적인 정보를 제공하고, 이를 처리할 수 있는 컴포넌트를 시스템이 선택합니다. 주로 외부 앱과의 통신이나 특정 작업을 수행할 수 있는 앱을 호출할 때 사용됩니다.
+
+### 예시
+
+```kotlin
+// 암시적 인텐트를 사용하여 웹 브라우저에서 URL 열기
+val intent = Intent(Intent.ACTION_VIEW, Uri.parse("<https://www.example.com>"))
+startActivity(intent)
+
+```
+
+### 자주 사용하는 암시적 Intent 상수들
+
+| 상수 (Constant)                  | 설명 (Description)                                      |
+|----------------------------------|---------------------------------------------------------|
+| `Intent.ACTION_VIEW`             | 주어진 URI에 대한 데이터를 보기          |
+| `Intent.ACTION_SEND`             | 데이터를 다른 애플리케이션으로 보내기     |
+| `Intent.ACTION_SENDTO`           | 특정 주소로 이메일을 보내기             |
+| `Intent.ACTION_PICK`             | 데이터를 선택하기                       |
+| `Intent.ACTION_DIAL`             | 전화 다이얼을 열기                      |
+| `Intent.ACTION_CALL`             | 직접 전화를 걸기 (권한 필요)             |
+| `Intent.ACTION_EDIT`             | 데이터를 편집하기                       |
+| `Intent.ACTION_DELETE`           | 데이터를 삭제하기                       |
+| `Intent.ACTION_GET_CONTENT`      | 사용자에게 데이터를 선택하도록 허용합니다.               |
+| `Intent.ACTION_IMAGE_CAPTURE`    | 카메라 앱을 열어 사진을 찍기            |
+| `Intent.ACTION_VIDEO_CAPTURE`    | 카메라 앱을 열어 동영상을 찍기          |
+| `Intent.ACTION_VIEW_DOWNLOADS`   | 다운로드한 파일을 보기                  |
+| `Intent.ACTION_APPLICATION_DETAILS_SETTINGS` | 앱의 설정 화면을 열기        |
+| `Intent.ACTION_SETTINGS`         | 설정 화면을 열기                        |
+| `Intent.ACTION_WEB_SEARCH`       | 웹 검색을 시작하기 
+
+## Context
+
+### Context에 대해 설명
+
+Context는 안드로이드 애플리케이션의 중요한 클래스 중 하나로, 애플리케이션의 환경 정보를 제공하는 인터페이스입니다. Context는 애플리케이션의 다양한 리소스, 애플리케이션 전역의 정보 및 특정 작업을 수행할 수 있는 기능을 제공합니다.
+
+### Context의 종류
+
+안드로이드에서는 여러 종류의 Context가 있습니다.
+
+1. Application Context
+    - 애플리케이션의 수명 주기와 동일한 Context입니다.
+    - 애플리케이션 전역에서 사용할 수 있으며, 일반적으로 애플리케이션의 수명 동안 유지됩니다.
+
+2. Activity Context
+    - 특정 액티비티의 수명 주기와 동일한 Context입니다.
+    - Activity가 파괴되면 이 Context도 함께 파괴됩니다.
+
+3. Service Context
+    - 특정 서비스의 수명 주기와 동일한 Context입니다.
+
+
+### Context의 주요 역할
+
+1. 리소스 접근: 앱의 리소스에 접근할 수 있도록 합니다. (예: 문자열, 이미지, 레이아웃 등)
+2. 애플리케이션 레벨 작업 수행: 애플리케이션 레벨의 작업을 수행하는 데 사용됩니다. (예: 시작, 중지 서비스, 브로드캐스트 수신 등)
+3. 앱 컴포넌트 관리: 애플리케이션의 컴포넌트(Activity, Service, BroadcastReceiver, ContentProvider)에 대한 정보와 접근을 제공합니다.
+4. 시스템 서비스 접근: 시스템 서비스(예: WINDOW_SERVICE, LAYOUT_INFLATER_SERVICE 등)에 접근할 수 있도록 합니다.
+
+### Context의 주요 메서드
+
+#### 리소스 접근
+- `getResources()`: 앱의 리소스에 접근합니다.
+- `getString(R.string.example)`: 문자열 리소스를 가져옵니다.
+- `getDrawable(R.drawable.example)`: drawable 리소스를 가져옵니다.
+
+#### 애플리케이션 레벨 작업
+- `startActivity(Intent)`: 새로운 액티비티를 시작합니다.
+- `startService(Intent)`: 서비스를 시작합니다.
+- `stopService(Intent)`: 서비스를 중지합니다.
+- `sendBroadcast(Intent)`: 브로드캐스트를 보냅니다.
+
+

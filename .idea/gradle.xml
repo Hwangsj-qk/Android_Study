@@ -16,6 +16,8 @@
             <option value="$PROJECT_DIR$/ch04_permission" />
             <option value="$PROJECT_DIR$/ch05_dialog" />
             <option value="$PROJECT_DIR$/ch06_notification" />
+            <option value="$PROJECT_DIR$/ch08_activity" />
+            <option value="$PROJECT_DIR$/ch08_activity_ex" />
           </set>
         </option>
         <option name="resolveExternalAnnotations" value="false" />
