@@ -8,9 +8,8 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.busanit.ch08_activity.R
 
-private const val TAG =  "mylog"        // logt로 자동 생성 가능
+private const val TAG = "mylog"
 class LifeCycleActivity : AppCompatActivity() {
-
     // Activity가 실행될 때: OnCreate -> onStart -> onResume
     // Activity가 보이지 않을 때 : onPause -> onStop
     // Activity가 다시 보일 때 : onRestart -> onStart -> onResume

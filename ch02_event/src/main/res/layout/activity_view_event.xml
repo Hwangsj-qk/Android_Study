@@ -5,11 +5,11 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ViewEventActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".ViewEventActivity">
 
     <CheckBox
-        android:id="@+id/checkboxView"
+        android:id="@+id/checkBoxView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="체크버튼" />
@@ -19,5 +19,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="버튼" />
+
 
 </LinearLayout>

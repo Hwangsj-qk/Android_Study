@@ -9,7 +9,6 @@ import com.busanit.ch08_activity.R
 import com.busanit.ch08_activity.databinding.ActivityCounterBinding
 
 class CounterActivity : AppCompatActivity() {
-
     lateinit var binding: ActivityCounterBinding
 
     var count = 0

@@ -9,7 +9,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.busanit.ch08_activity.R
 import com.busanit.ch08_activity.databinding.ActivityIntent2Binding
 
-// 인텐트 결과 반환
+// 인텐트 결과 반환 
 class Intent2Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

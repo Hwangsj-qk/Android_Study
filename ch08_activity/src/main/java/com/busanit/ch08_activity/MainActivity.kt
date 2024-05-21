@@ -3,7 +3,6 @@ package com.busanit.ch08_activity
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.contract.ActivityResultContracts
@@ -15,7 +14,6 @@ import com.busanit.ch08_activity.intent.Intent1Activity
 import com.busanit.ch08_activity.intent.Intent2Activity
 
 class MainActivity : AppCompatActivity() {
-
     lateinit var binding: ActivityMainBinding       // 지연 초기화 바인딩 객체 선언
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
