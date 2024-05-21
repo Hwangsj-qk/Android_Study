@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:gravity="center">
 
     <ImageView
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:src="@drawable/ic_android_black_24dp"/>
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/heart_check"
+        />
 
     <!-- 클립아트 아이콘 추가하기
         (리소스 디렉토리, 리소스 매니저, ImageView 창에서)

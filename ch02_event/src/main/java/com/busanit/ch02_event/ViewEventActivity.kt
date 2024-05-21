@@ -17,6 +17,8 @@ class ViewEventActivity : AppCompatActivity() {
     // 이벤트 리스너 : 이벤트 소스와 이벤트 핸들러를 연결해 주는 함수
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // 레이아웃 설정
         val binding = ActivityViewEventBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -25,6 +27,8 @@ class ViewEventActivity : AppCompatActivity() {
         }
         binding.checkBoxView.setOnCheckedChangeListener { buttonView, isChecked ->
             Log.d(TAG, "체크버튼이 변경되었습니다. $isChecked")
+
+            // 여기서 buttonView는 왜 매개변수를 받는 것인지 선생님께 여쭤보기
         }
 
         // 외부에서 작성한 이벤트 핸들러 객체를 매개변수로 받는 경우
@@ -35,11 +39,13 @@ class ViewEventActivity : AppCompatActivity() {
             true
         }
 
+        // 요구되는 반환값은 boolean이다.
+
     }
 }
 
-class MyHandler : CompoundButton.OnCheckedChangeListener {
-    override fun onCheckedChanged(buttonView: CompoundButton?, isChecked: Boolean) {
-        Log.d("mylog", "체크버튼 변경되었음 $isChecked")
-    }
-}
+//class MyHandler : CompoundButton.OnCheckedChangeListener {
+//    override fun onCheckedChanged(buttonView: CompoundButton?, isChecked: Boolean) {
+//        Log.d("mylog", "체크버튼 변경되었음 $isChecked")
+//    }
+//}

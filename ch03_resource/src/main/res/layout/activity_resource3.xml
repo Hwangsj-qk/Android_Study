@@ -6,9 +6,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Resource3Activity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:gravity="center">
 
-    <!-- 상태에 따라 색상 변경 -->
+<!--     상태에 따라 색상 변경 -->
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -21,7 +22,8 @@
         android:layout_height="wrap_content"
         android:text="Hello, Fonts!"
         android:fontFamily="@font/poetsen"
-        android:textSize="40sp"/>
+        android:textSize="40sp"
+        android:layout_gravity="center"/>
 
     <TextView
         android:id="@+id/textView3"

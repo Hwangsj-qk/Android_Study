@@ -9,5 +9,7 @@ import androidx.core.view.WindowInsetsCompat
 class Resource6Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        setContentView(R.layout.activity_resource6)
     }
 }
