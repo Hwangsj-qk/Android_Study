@@ -11,6 +11,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.busanit.ch04_permission.databinding.ActivityPermission2Binding
 
 class Permission2Activity : AppCompatActivity() {
+
     // 권한 목록: 여러 개의 Manifest 중 android 선택
     val permissionList = arrayOf(
     Manifest.permission.INTERNET,
@@ -25,10 +26,11 @@ class Permission2Activity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         // 권한 선언은 AndroidManifest에 선언
 
+        // 레이아웃 설정
         val binding = ActivityPermission2Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // 위치 권한 요청 객체 생성과 콜백 설정
+        // "위치" 권한 요청 객체 생성과 콜백 설정
         val request1 = ActivityResultContracts.RequestMultiplePermissions()
         val locationLauncher = registerForActivityResult(request1) {
             for ((permission, granted) in it) {
@@ -51,7 +53,6 @@ class Permission2Activity : AppCompatActivity() {
                     }
                 }
             }
-
         }
 
 
@@ -128,3 +129,4 @@ class Permission2Activity : AppCompatActivity() {
         }
     }
 }
+// 각 권한의 종류는 README 파일 참고
