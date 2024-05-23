@@ -10,7 +10,6 @@ import com.busanit.ch10_fragment.databinding.ActivityMainBinding
 
 class SampleFragment : Fragment() {
 
-
     // Fragment의 뷰를 생성하고 반환하는 메소드 (생명 주기)
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
