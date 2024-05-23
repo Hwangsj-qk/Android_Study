@@ -42,7 +42,7 @@ class RecyclerViewAdapter(val carList: MutableList<RecyclerViewActivity.Car>) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     // 뷰 홀더 클래스를 정의
-    inner class ViewHolder(val binding: CarItemBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class ViewHolder<T>(val binding: CarItemBinding) : RecyclerView.ViewHolder(binding.root) {
         // 뷰 홀더를 클릭했을 떄 이벤트 리스너 설정
         init {
             binding.root.setOnClickListener {
@@ -63,14 +63,14 @@ class RecyclerViewAdapter(val carList: MutableList<RecyclerViewActivity.Car>) :
             false
         )
         // 뷰홀더 반환
-        return ViewHolder(binding)
+        return ViewHolder<Any>(binding)
     }
 
     // 뷰홀더에 데이터를 바인딩
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val car = carList[position]  // 데이터 목록에서 해당 위치 데이터 가져오기
 
-        val binding = (holder as ViewHolder).binding    // 뷰홀더에서 binding 정보 가져오기
+        val binding = (holder as ViewHolder<Any?>).binding    // 뷰홀더에서 binding 정보 가져오기
 
         // 뷰에 데이터 바인딩
         binding.run {

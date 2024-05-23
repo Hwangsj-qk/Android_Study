@@ -227,3 +227,28 @@ MyAndroidApp/
 - [Manifest.permission](https://developer.android.com/reference/android/Manifest.permission)
 
 ---
+
+## Fragment
+
+Fragment는 Android 애플리케이션의 UI와 동작을 모듈화하고 재사용할 수 있도록 도와주는 구성 요소입니다. 하나의 Activity 내에서 여러 Fragment를 추가하고, 제거하며, 교체할 수 있습니다. 이는 복잡한 UI를 더 유연하고 관리하기 쉽게 만들며, 다양한 화면 크기와 방향을 지원하는 데 유용합니다.
+
+필요성:
+- 재사용성: 여러 Activity에서 동일한 UI 구성 요소를 사용해야 할 때, Fragment를 사용하면 코드의 재사용성을 높일 수 있습니다.
+- 모듈화: UI와 동작을 독립적인 모듈로 분리하여 관리하기 쉽게 만듭니다.
+- 유연한 레이아웃: 다양한 화면 크기와 방향에 맞춰 동적으로 UI를 구성할 수 있습니다.
+- 멀티태스킹: 하나의 Activity 내에서 여러 Fragment를 독립적으로 관리하여 멀티태스킹을 지원할 수 있습니다.
+
+#### Activity와 Fragment의 차이점
+- fragment는 Activity의 일부이다. 
+
+| 특징         | Activity                  | Fragment                                        |
+|------------------|---------------------------|-------------------------------------------------|
+| 역할         | 애플리케이션의 단일 화면을 관리하는 기본 단위 | Activity 내에서 UI와 동작의 부분을 관리하는 모듈                |
+| 생명주기     | 독립적인 생명주기를 가짐             | Activity의 생명주기에 종속됨                             |
+| UI 관리     | **전체** 화면의 UI를 관리         | 화면의 **일부** UI를 관리                               |
+| 관리 방법   | `Activity`를 시작하거나 종료하여 관리 | `FragmentManager`를 통해 추가, 제거, 교체 가능             |
+| 다양한 화면 지원 | 각 화면에 대해 별도의 Activity 필요  | 하나의 Activity 내에서 여러 Fragment를 사용하여 다양한 화면 구성 가능 |
+| 멀티태스킹   | 여러 Activity를 동시에 실행하기 어려움 | 하나의 Activity 내에서 여러 Fragment를 독립적으로 관리 가능       |
+
+### 참고 문서
+- [Fragment 공식 문서](https://developer.android.com/guide/fragments)
