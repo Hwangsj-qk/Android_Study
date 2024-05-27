@@ -73,10 +73,10 @@ class SqliteActivity : AppCompatActivity() {
                     // 커서에 다음 데이터가 없을 때까지(false) row를 순회하며 커서 진행
                     while(moveToNext()) {
                         // 결과 셋의 매 행마다 데이터를 조회하여 문자열 추가
-                        // getColumnIndex 컬럼의 순서를 가져옴
-                        val id = getInt(getColumnIndex("id"))
-                        val name = getString(getColumnIndex("name"))
-                        val age = getInt(getColumnIndex("age"))
+                        // getColumnIndex 컬럼의 순서를 가져옴 -> 만약 컴파일 에러 발생 시 getColumnIndexOrThorw 사용
+                        val id = getInt(getColumnIndexOrThrow("id"))
+                        val name = getString(getColumnIndexOrThrow("name"))
+                        val age = getInt(getColumnIndexOrThrow("age"))
                         stringBuilder.append("아이디: $id, 이름: $name, 나이: $age\n")
                     }
                 }
