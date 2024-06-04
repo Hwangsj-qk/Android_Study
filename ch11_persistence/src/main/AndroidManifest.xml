@@ -23,6 +23,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Android_Study">
         <activity
+            android:name=".e_room.RoomActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".d_stlite.SqliteActivity"
             android:exported="true">
             <intent-filter>

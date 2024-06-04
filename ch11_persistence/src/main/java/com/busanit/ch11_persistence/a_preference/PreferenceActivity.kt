@@ -80,8 +80,5 @@ class PreferenceActivity : AppCompatActivity() {
         val bool = sharedPreferences.getBoolean("bool", false)
         val set = sharedPreferences.getString("set", null)
 
-
-
-
     }
 }
