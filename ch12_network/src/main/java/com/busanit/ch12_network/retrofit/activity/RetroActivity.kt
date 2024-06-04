@@ -15,6 +15,8 @@ import retrofit2.Response
 
 class RetroActivity : AppCompatActivity() {
     lateinit var binding: ActivityRetroBinding
+    lateinit var adapter: PostAdapter
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityRetroBinding.inflate(layoutInflater)
@@ -38,22 +40,21 @@ class RetroActivity : AppCompatActivity() {
                 // 실패 처리
             }
         })
-
-
-        // Result API
-        val ActivityResult =
+// Result API 설정
+        val activityResultLauncher =
             registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
-                adapter.notifyDataChanged()         // 리사이클러뷰 데이터셋 갱신
-                binding.recyclerView.scrollToPosition(0)        // 최상단으로 스크롤
+                adapter.notifyDataSetChanged()      // 리사이클러뷰 데이터셋 갱신
+                binding.recyclerView.scrollToPosition(0)  // 최상단으로 스크롤
             }
 
-        // 버튼을 클릭하면 글 작성 액티비티로 넘어감
+        // 버튼을 클릭하면 글 작성 액티비티로
         binding.buttonCreate.setOnClickListener {
             val intent = Intent(this, NewPostActivity::class.java)
-            // startActivity(intent)
-            activityResultLauncher.launch(intent)
-
+            // startActivity(intent)  // 결과 반환하지 않을 시
+            activityResultLauncher.launch(intent)   // 액티비티 결과 반환
         }
+
+
 
     }
 }
