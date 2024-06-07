@@ -1,5 +1,6 @@
 package com.busanit.ch13_login
 
+import com.busanit.ch13_login.model.LoginResponse
 import com.busanit.ch13_login.model.Test
 import com.busanit.ch13_login.model.User
 import retrofit2.Call
@@ -17,8 +18,12 @@ interface ApiService {
     @GET("/protect")
     fun protect(): Call<Test>
 
-    // 회원 가입 API : 본문에 User 정보를 담아 User 정보 리턴
+    // 회원 가입 API : 본문에 User 정보를 담아 User 정보 리턴 (백엔드와 요청을 똑같아야 함)
     @POST("/jwt/register")
     fun register(@Body user: User) : Call<User>
+
+    // 로그인 API
+    @POST("/jwt/auth")
+    fun login(@Body user: User) : Call<LoginResponse>
 
 }
