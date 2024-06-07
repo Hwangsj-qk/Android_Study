@@ -66,6 +66,136 @@ MyAndroidApp/
 ```
 3. 엘리먼트(Element) : 시작 태그와 종료 태그 사이에 있는 콘텐츠
     ▶ 엘리먼트(요소) = 태그 + 콘텐츠(내용)
+```xml
+<person>
+    <name>홍길동</name>
+    <age>30</age>
+</person>
+```
+4. 속성(Attributes) - 태그에 추가 정보를 제공 - Key-Value 쌍
+```xml
+<person name="홍길동" age="30" />
+```
+5. 네임스페이스 (Namespace) - 태그 이름의 충돌을 피하기 위해 고유한 접두사를 부여 - 선언부 또는 태그 내부의 'xmlns' 속성을 사용하여 URI로 정의
+```xml
+<myname:person xmlns:myname="http://myname.com/myname">
+    <myname:name>홍길동</myname:name>
+</myname:person>
+```
+📢 주의사항
+- XML 태그는 대소문자를 구분
+- 태그의 쌍은 정확하게 매칭이 되어야 함
+- 속성의 값은 반드시 큰따옴표나 작은따옴표로 감싸야 함
+- 루트 엘리먼트(최상위)는 하나여야 함
+
+## 뷰의 레이아웃
+- [뷰의 레이아웃] (https://developer.android.com/develop/ui/views/layout/declaring-layout?hl=ko)
+- View 클래스 : (화면구성과 관련된 클래스)
+  - ViewGroup : View의 하위클래스지만, 화면에는 아무것도 출력하지 않고 다른 뷰 여러개를 묶는 그릇 역할 클래스
+    - XXXLayout : 뷰의 컨테이너 역할
+  - TextView, XXXView : 특정 UI를 출력할 목적으로 사용하는 클래스
+
+## 뷰 바인딩
+- 레이아웃 XML 파일에 선언한 뷰 객체를 코드에서 쉽게 이용하는 방법
+- 모듈 단위 build.gradle 파일 android 영역에 설정 선언 추가
+```kotlin
+android {
+ ...(생략)
+ viewBinding { enable = true }
+ ...
+}
+```
+- 그레이들을 동기화하면, 자동으로 뷰 객체 포함하는 클래스가 생성
+- 레이아웃 XML 파일의 이름을 따름
+  - 클래스이름 : 첫글자 및 _ 뒤를 대문자로 바꾼 후 'Binding' 추가
+    - ex) activity_main.xml -> ActivityMainBinding
+```kotlin
+  // 바인딩 객체 획득 (View Binding)
+     val binding = ActivityBindingBinding.inflate(layoutInflater)
+
+     // 바인딩 객체로 화면을 출력
+     setContentView(binding.root)
+
+     // findViewById를 사용하지 않고 뷰 객체 사용
+     binding.visibleButton.setOnClickListener {
+         binding.targetView.visibility = View.VISIBLE
+     }
+```
+- [공식문서 메뉴얼] (https://developer.android.com/topic/libraries/view-binding?hl=ko#groovy)
+
+## 뷰를 배치하는 레이아웃
+1. 수평, 수직으로 배치 - LinearLayout
+2. 상대적은 위치로 배치 - RelativeLayout
+3. 겹쳐서 배치 - FrameLayout
+4. 격자 형태로 배치 - GridLayout
+5. 제약조건으로 배치 - ConstraintLayout
+
+## 사용자 이벤트 처리
+1. 터치 이벤트
+2. 키 이벤트
+3. 뷰 이벤트
+- [이벤트 공식문서] (https://developer.android.com/develop/ui/views/touch-and-input/input-events?hl=ko)
+
+## 리소스
+- [공식문서: 앱리소스 개요] (https://developer.android.com/guide/topics/resources/providing-resources?hl=ko)
+- [XML도형 드로어블] (https://developer.android.com/guide/topics/resources/drawable-resource?hl=ko#Shape)
+
+### 리소스의 종류
+
+1. 레이아웃 리소스 (Layout Resources)
+- 파일 위치: `res/layout`
+- 확장자: `.xml`
+- 액티비티, 프래그먼트, 또는 앱의 UI 부분의 뷰 구조를 정의.
+- 레이아웃 에디터를 통해 드래그 앤 드롭으로 구성
+- XML로 직접 작성 가능
+
+2. 이미지 리소스 (Drawable Resources)
+- 파일 위치: `res/drawable`
+- 확장자: `.png`, `.jpg`, `.gif`, `.xml` 등
+- 앱에서 사용하는 이미지 파일들을 저장
+- 해상도에 따라 다른 폴더(`drawable-hdpi`, `drawable-mdpi` 등)에 저장하여 다양한 화면 밀도 지원
+
+3. 문자열 리소스` (String Resources)
+- 파일 위치: `res/values`
+- 모든 텍스트 콘텐츠를 저장
+- 다국어 지원을 간편하게 구현 가능 
+- `strings.xml` 파일에서 관리
+
+4. 색상 리소스 (Color Resources)
+- 파일 위치: `res/values`
+- 색상 코드 정의
+- `colors.xml` 파일을 통해 앱 전체의 색상 테마를 일관성있게 관리 가능
+
+5. 치수 리소스 (Dimension Resources)
+- 파일 위치: `res/values`
+- 모든 치수 정보(예: 마진, 패딩, 폰트 크기)를 저장
+- `dimens.xml` 파일에서 관리하여 여러 뷰에서 재사용 가능
+
+6. 스타일 리소스 (Style Resources)
+- 파일 위치: `res/values`
+- 앱의 테마나 스타일 정의
+- `styles.xml` 파일을 통해 디자인을 일관성있게 관리 가능 
+
+#### 사용하기
+1. 문자열 리소스: `R.string.resource_name`을 사용하여 문자열 리소스 참조
+2. 색상 리소스: `ContextCompat.getColor(context, R.color.resource_name)`을 사용하여 색상 리소스 참조
+3. 크기 리소스: `getResources().getDimension(R.dimen.resource_name)`을 사용하여 크기 리소스 참조
+4. 스타일 리소스: XML 레이아웃 파일에서 `style` 속성을 사용하여 스타일 적용
+5. 다국어 지원: 각 언어에 맞는 `strings.xml` 파일을 `res/vuales` 하위 폴더에 추가하여 다국어 지원
+
+### 프로젝트에 클립아트(아이콘) 추가하기
+1. 안드로이드 스튜디오에서 프로젝트 열기
+- 안드로이드 스튜디오를 열고 작업 중인 프로젝트 열기
+
+2. 리소스 디렉토리 열기
+- `res` 디렉토리를 열고 `drawable` 폴더를 확인
+- 클립아트(아이콘)는 보통 이 폴더에 추가
+3. 리소스 디렉토리 열기
+4. 벡터 자산(Vector Asset) 설정
+5. 클립아트 선택
+6. 아이콘 설정 및 추가
+7. 선택한 클립아트가 drawable 폴더에 XML 파일로 추가됩니다.
+
 
 ## 권한
 

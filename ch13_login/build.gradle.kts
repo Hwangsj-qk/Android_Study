@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.busanit.ch12_network"
+    namespace = "com.busanit.ch13_login"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.busanit.ch12_network"
+        applicationId = "com.busanit.ch13_login"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -34,9 +34,7 @@ android {
         jvmTarget = "1.8"
     }
 
-    viewBinding { enable = true}
-
-
+    viewBinding { enable = true }
 }
 
 dependencies {
@@ -47,6 +45,7 @@ dependencies {
 
     // Glide 의존성 추가
     implementation("com.github.bumptech.glide:glide:4.16.0")
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

@@ -22,6 +22,7 @@
             <option value="$PROJECT_DIR$/ch10_fragment" />
             <option value="$PROJECT_DIR$/ch11_persistence" />
             <option value="$PROJECT_DIR$/ch12_network" />
+            <option value="$PROJECT_DIR$/ch13_login" />
           </set>
         </option>
         <option name="resolveExternalAnnotations" value="false" />
